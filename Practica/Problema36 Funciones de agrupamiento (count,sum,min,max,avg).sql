@@ -35,20 +35,22 @@ if object_id('empleados') is not null
 Go
 
 --4- Muestre la cantidad de empleados usando "count" (9 empleados)
-SELECT COUNT(*) FROM empleados
+SELECT COUNT(*) FROM empleados;
 --5- Muestre la cantidad de empleados con sueldo no nulo de la sección "Secretaria" (2 empleados)
 SELECT COUNT(*) FROM empleados AS e 
-WHERE e.sueldo is null
+WHERE e.sueldo is null;
 --6- Muestre el sueldo más alto y el más bajo colocando un alias (5000 y 2000)
-SELECT MAX(e.sueldo) AS Maximo,MIN(e.sueldo) AS Minimo FROM empleados AS e
+SELECT MAX(e.sueldo) AS Maximo,MIN(e.sueldo) AS Minimo FROM empleados AS e;
 --7- Muestre el valor mayor de "cantidadhijos" de los empleados "Perez" (3 hijos)	
 SELECT MAX(e.cantidadhijos) AS hijos FROM empleados AS e
-WHERE e.nombre LIKE '%Perez'
+WHERE e.nombre LIKE '%Perez';
 --8- Muestre el promedio de sueldos de todo los empleados (3400. Note que hay un sueldo nulo y no es tenido en cuenta)
 SELECT AVG(e.sueldo) FROM empleados AS e
 --9- Muestre el promedio de sueldos de los empleados de la sección "Secretaría" (2100)
 SELECT AVG(e.sueldo) FROM empleados AS e
-WHERE e.seccion='Secretaria'
+WHERE e.seccion='Secretaria';
 --10- Muestre el promedio de hijos de todos los empleados de "Sistemas" (2)
 SELECt AVG(e.cantidadhijos) FROM empleados AS e
-WHERE e.seccion='Sistemas'
+WHERE e.seccion='Sistemas';
+
+SELECT SUM(cantidadhijos) FROM empleados; --retorna la suma de los valores que contiene el campo especificado.

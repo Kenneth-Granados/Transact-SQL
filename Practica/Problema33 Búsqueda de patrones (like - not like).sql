@@ -71,3 +71,14 @@ GO
 SELECT nombre FROM empleados
 WHERE fechaingreso LIKE '%1990%'
 GO
+
+--Así como "%" reemplaza cualquier cantidad de caracteres, el guión bajo "_" reemplaza un caracter, es otro caracter comodín. 
+--Por ejemplo, queremos ver los libros de "Lewis Carroll" pero no recordamos si se escribe "Carroll" o "Carrolt", entonces tipeamos esta condición:
+--select * from libros where autor like "%Carrol_"; 
+--Otro caracter comodín es [] reemplaza cualquier carácter contenido en el conjunto especificado dentro de los corchetes. Para seleccionar los libros 
+--cuya editorial comienza con las letras entre la "P" y la "S" usamos la siguiente sintaxis: 
+-- select titulo,autor,editorial from libros where editorial like '[P-S]%'; --Ejemplos: 
+--... like '[a-cf-i]%': busca cadenas que comiencen con a,b,c,f,g,h o i; 
+--... like '[-acfi]%': busca cadenas que comiencen con -,a,c,f o i;
+--... like 'A[_]9%': busca cadenas que comiencen con 'A_9'; 
+--... like 'A[nm]%': busca cadenas que comiencen con 'An' o 'Am'.

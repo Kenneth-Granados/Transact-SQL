@@ -5,13 +5,13 @@ if object_id('remis') is not null
 GO
 
  create table remis(
-  numero tinyint identity,
+  numero tinyint identity ,
   patente char(6),
   marca varchar(15),
   modelo char(4)
  );
 GO
-
+--select NEWID();
  insert into remis values('ABC123','Renault clio','1990');
  insert into remis values('DEF456','Peugeot 504','1995');
  insert into remis values('DEF456','Fiat Duna','1998');

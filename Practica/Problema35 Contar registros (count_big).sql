@@ -44,3 +44,5 @@ SELECT COUNT_BIG(precio) AS PRECIO FROM medicamentos
 WHERE laboratorio LIKE 'B%'
 --8- Cuente la cantidad de medicamentos con número de lote distitno de "null" (0 registros)
 SELECT COUNT_BIG(numerolote) FROM medicamentos
+
+--Retorna la cantidad de registros. Es similar a la función "count (*)", la diferencia es que "count_big" retorna un valor "bigint" y "count", un "int".
