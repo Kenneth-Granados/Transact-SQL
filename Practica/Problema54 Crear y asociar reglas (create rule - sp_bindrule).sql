@@ -49,6 +49,7 @@ GO
 --Note que hay una patente que no cumple la regla, SQL Server NO controla los datos existentes, pero 
 --si controla las inserciones y actualizaciones:
  select * from vehiculos;
+ PRINT 'Hola';
 
 --9- Intente ingresar un registro con valor para el campo "patente" que no cumpla con la regla.
 --aparece un mensaje de error indicando que hay conflicto con la regla y la inserción no se realiza.
@@ -119,6 +120,7 @@ insert into vehiculos values ('STU456',default,'1990-02-01 10:10','1990-02-01 15
 --No lo permite porque va contra la regla asociada al campo "tipo".
 
 --24- Vea las reglas asociadas a "empleados" y las restricciones aplicadas a la misma tabla ejecutando 
-"sp_helpconstraint".
+--"sp_helpconstraint".
 --Muestra 1 restricción "check", 1 restricción "default" y 4 reglas asociadas
-
+EXEC sp_help -- podemos ver todos los objetos de la base de datos activa
+EXEC sp_helpconstraint vehiculos

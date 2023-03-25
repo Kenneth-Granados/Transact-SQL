@@ -38,7 +38,7 @@ SELECT Nombre,Pais,DATENAME(MONTH,Fecha) AS Mes FROM Visitas
 ORDER BY Pais ASC, Mes DESC;
 
 SELECT Pais,DATENAME(MONTH,Fecha) AS Mes,DATENAME(DAY,Fecha) AS Dia,DATEPART(YEAR,Fecha) AS Anios,
-DATEPART(HOUR,Fecha) AS Hora FROM Visitas
+DATEPART(HOUR,Fecha) AS Hora, DATENAME(YEAR,Fecha) AS Prueba FROM Visitas
 ORDER BY Mes,Dia,Hora;
 
 SELECT Mail,Pais FROM Visitas

@@ -76,7 +76,7 @@ INSERT INTO clientes (nombre)
 VALUES ('Marcos') 
 GO
 --16- Asocie el valor predeterminado "VP_datodesconocido" al campo "fechaingreso".
-EXEC sp_unbindefault VP_datodesconocido, 'clientes.fechaingreso';
+EXEC sp_bindefault VP_datodesconocido, 'clientes.fechaingreso';
 --Note que se asoció un valor predeterminado de tipo caracter a un campo de tipo "datetime"; SQL 
 --Server lo permite, pero al intentar ingresar el valor aparece un mensaje de error.
 

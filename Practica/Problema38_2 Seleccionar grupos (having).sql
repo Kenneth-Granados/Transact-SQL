@@ -2,8 +2,6 @@ USE Practica;
 
 if object_id('visitantes') is not null
   drop table visitantes;
-
-
 GO
 
 create table visitantes(

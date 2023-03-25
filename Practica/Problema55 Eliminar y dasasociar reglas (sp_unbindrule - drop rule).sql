@@ -45,7 +45,7 @@ GO
 --que solamente puedan ingresarse los caracteres "a", "c" y "m":
  create rule RG_vehiculos_tipo2
  as @tipo in ('a','c','m');
-
+ GO
 --11- Si la asociamos a un campo que ya tiene asociada otra regla, la nueva regla reeemplaza la 
 --asociación anterior. Asocie la regla creada en el punto anterior al campo "tipo".
 EXEC sp_bindrule RG_vehiculos_tipo2, 'vehiculos.tipo';
@@ -79,3 +79,10 @@ DROP RULE RG_patente_patron
 --20- Verifique que la regla ya no existe en la base de datos activa.
  exec sp_help;
 --No aparece la regla "RG_patente_patron".
+
+EXEC sp_help RG_vehiculos_tipo2 --para ver una regla en especifico
+--Para ver el texto de una regla empleamos el procedimiento almacenado "sp_helptext" seguido del nombre de la regla: exec sp_helptext NOMBREREGLA;
+EXEC sp_helptext RG_vehiculos_tipo2; 
+--Si queremos ver todas las reglas creadas por nosotros, podemos tipear: select * from sysobjects where xtype='R' and-- tipo regla name like 'RG%';--búsqueda con comodín
+select * from sysobjects where xtype='R' and name like 'RG%'--'%vehiculos%';
+
